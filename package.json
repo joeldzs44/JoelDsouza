@@ -1,0 +1,16 @@
+{
+  "name": "JoelDsouza",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [],
+  "author": "Joel Dsouza",
+  "license": "ISC
+  "homepage": "https://joeldzs44.github.io/JoelDsouza"
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
