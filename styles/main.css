@@ -3,11 +3,15 @@
   src: url("../assets/font.ttf");
 }
 
+:root {
+  --bg-color: rgb(250, 250, 168);
+}
+
 *{
  margin: 0;
  padding: 0;
  overflow-x: hidden;
- background-color: rgb(250, 250, 168);
+ background-color: var(--bg-color);
  font-family: 'Ubuntu', sans-serif;
 }
 
@@ -24,6 +28,7 @@ a, a:visited {
     display: flex;
     flex-direction: column;
     place-items: center;
+    margin-bottom: 20vh;
 }
 
 .name {
@@ -36,6 +41,7 @@ a, a:visited {
 .tagline{
     font-size: 24px;
     text-align: center;
+    margin-top: 2vh;
 }
 
 .halfhr{
@@ -77,21 +83,141 @@ a, a:visited {
 .skills-list{
     max-width: 50vw;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4vw;
 }
 
 .skill {
     font-size: 32px;
     font-weight: 100;
-    display: inline;
-    margin: 0 2vw;
 }
 
-@media only screen and (min-width: 1024px) {
-  
+.projects-section{
+    max-width: 50vw;
 }
 
-@media only screen and (min-width: 768px) {
-  
+.projects-list{
+    counter-reset: list-counter;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project {
+    counter-increment: list-counter;
+    
+    width: 100%;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.project:before{
+    content: "0" counter(list-counter);
+    font-weight: bold;
+    font-size: 4rem;
+    margin-right: 0.5rem;
+    line-height: 1;
+}
+
+.project-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+    
+.project-description {
+    margin-bottom: 1rem;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .projects-section {
+        max-width: 60vw;
+    }
+
+    .project:before{
+        font-size: 48px;
+    }
+    
+}
+
+@media only screen and (min-width: 2000px) {
+    .name {
+        font-size: 120px;
+    }
+
+    .tagline {
+        font-size: 48px;
+    }
+
+    .section-title {
+        font-size: 48px;
+    }
+
+    .skill {
+        font-size: 48px;
+    }
+
+    .project-title {
+        font-size: 48px;
+    }
+
+    .project-description {
+        margin-top: 1rem;
+        font-size: 36px;
+        color: rgb(82, 80, 80);
+    }
+
+    .project-link {
+        font-size: 36px;
+    }
+
+    .icons {
+        font-size: 112px;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .name {
+    font-size: 48px;
+  }
+
+  .tagline {
+      font-size: 16px;
+  }
+
+  .section-title {
+      font-size: 32px;
+  }
+
+  .skill {
+      font-size: 24px;
+  }
+
+  .icons {
+      font-size: 48px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .project-description {
+        margin-top: 1rem;
+        font-size: 20px;
+    }
+
+    .project-link {
+        font-size: 18px;
+    }
+
+    .icons {
+        font-size: 80px;
+    }
 }
 
 
@@ -115,4 +241,8 @@ a, a:visited {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(78, 78, 78); 
+}
+
+footer {
+    text-align: center;
 }
